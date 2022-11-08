@@ -70,7 +70,7 @@ scale_y_units <- function(..., unit = NULL) {
     super = MakeScaleContinuousPositionUnits()
   )
   sc$units <- as_units(unit)
-  sc
+  ggplot2:::set_sec_axis(sec.axis, sc)
 }
 
 MakeScaleContinuousPositionUnits <- function() {
