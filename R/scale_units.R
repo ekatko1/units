@@ -58,7 +58,7 @@ scale_x_units <- function(..., position = "bottom", unit = NULL) {
 
 #' @rdname scale_units
 #' @export
-scale_y_units <- function(..., unit = NULL) {
+scale_y_units <- function(..., unit = NULL,  sec.axis = ggplot2::waiver()) {
   if (!requireNamespace("ggplot2", quietly=TRUE))
     stop("package 'ggplot2' is required for this functionality", call.=FALSE)
 
