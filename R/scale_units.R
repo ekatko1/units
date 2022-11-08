@@ -40,7 +40,7 @@ NULL
 
 #' @rdname scale_units
 #' @export
-scale_x_units <- function(..., position = "bottom", unit = NULL) {
+scale_x_units <- function(..., position = "bottom", unit = NULL, sec.axis = ggplot2::waiver()) {
   if (!requireNamespace("ggplot2", quietly=TRUE))
     stop("package 'ggplot2' is required for this functionality", call.=FALSE)
 
@@ -53,7 +53,7 @@ scale_x_units <- function(..., position = "bottom", unit = NULL) {
     super = MakeScaleContinuousPositionUnits()
   )
   sc$units <- as_units(unit)
-  sc
+  ggplot2:::set_sec_axis(sec.axis, sc)
 }
 
 #' @rdname scale_units
